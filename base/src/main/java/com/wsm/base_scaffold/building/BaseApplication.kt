@@ -13,7 +13,6 @@ import com.blankj.utilcode.util.Utils
  */
 abstract class BaseApplication : Application(), ViewModelStoreOwner {
     private lateinit var appViewModelStore: ViewModelStore
-
     override fun onCreate() {
         super.onCreate()
         appViewModelStore = ViewModelStore()
