@@ -18,8 +18,8 @@ package com.kunminx.puremusic.ui.callback;
 
 import androidx.lifecycle.ViewModel;
 
-import com.kunminx.architecture.ui.callback.ProtectedUnPeekLiveData;
-import com.kunminx.architecture.ui.callback.UnPeekLiveData;
+import com.wsm.base_scaffold.building.ui.callback.ProtectedUnPeekLiveData;
+import com.wsm.base_scaffold.building.ui.callback.UnPeekLiveData;
 
 /**
  * TODO tip 1：callback-ViewModel 的职责仅限于在 "跨页面通信" 的场景下，承担 "唯一可信源"，
