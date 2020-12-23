@@ -16,6 +16,7 @@
 
 package com.kunminx.puremusic.ui.page;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
