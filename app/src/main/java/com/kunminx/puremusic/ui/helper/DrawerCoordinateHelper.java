@@ -20,8 +20,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 
-import com.kunminx.architecture.ui.callback.ProtectedUnPeekLiveData;
-import com.kunminx.architecture.ui.callback.UnPeekLiveData;
+import com.wsm.base_scaffold.building.ui.callback.ProtectedUnPeekLiveData;
+import com.wsm.base_scaffold.building.ui.callback.UnPeekLiveData;
 
 import java.util.ArrayList;
 import java.util.List;

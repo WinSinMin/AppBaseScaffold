@@ -1,7 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.github.dcendents.android-maven'//this
+group='com.github.winsinmin'//this
 
 android {
     compileSdkVersion 30
@@ -54,7 +55,5 @@ dependencies {
     api 'androidx.navigation:navigation-ui-ktx:2.3.2'
     api 'androidx.navigation:navigation-fragment-ktx:2.3.2'
     api 'androidx.navigation:navigation-ui-ktx:2.3.2'
-
-    api 'com.kunminx.archi:unpeek-livedata:4.4.1-beta1'
-    api 'com.kunminx.archi:strict-databinding:3.6.2-beta1'
+    api 'com.google.code.gson:gson:2.8.6'
 }

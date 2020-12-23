@@ -60,8 +60,6 @@ dependencies {
 
     implementation 'com.yanzhenjie.permission:x:2.0.1'
 
-    implementation 'com.google.code.gson:gson:2.8.6'
-
     implementation 'com.sothree.slidinguppanel:library:3.4.0'
     implementation 'net.steamcrafted:materialiconlib:1.1.5'
 
