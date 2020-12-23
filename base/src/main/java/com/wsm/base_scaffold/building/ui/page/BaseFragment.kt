@@ -8,10 +8,13 @@ import android.os.Handler
 import android.os.Looper
 import android.view.animation.Animation
 import android.view.inputmethod.InputMethodManager
+import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.wsm.base_scaffold.building.BaseApplication
 
@@ -28,6 +31,7 @@ abstract class BaseFragment : DataBindingFragment() {
     private var applicationProvider: ViewModelProvider? = null
 
     private val handler by lazy { Handler(Looper.getMainLooper()) }
+    protected val navController by lazy { nav() }
 
     protected  var animationLoaded: Boolean = false
 
@@ -68,7 +72,6 @@ abstract class BaseFragment : DataBindingFragment() {
 
 
     protected open fun nav(): NavController = NavHostFragment.findNavController(this)
-
 
     override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
         handler.postDelayed({

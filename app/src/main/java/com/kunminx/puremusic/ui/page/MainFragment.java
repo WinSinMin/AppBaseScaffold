@@ -165,6 +165,10 @@ public class MainFragment extends BaseFragment {
             nav().navigate(R.id.action_mainFragment_to_searchFragment);
         }
 
+        public void keep(){
+            nav().navigate(R.id.action_mainFragment_to_keepNavigationFragment);
+        }
+
     }
 
 }

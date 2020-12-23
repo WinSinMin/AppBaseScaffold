@@ -1,8 +1,8 @@
 package com.wsm.base_scaffold.building
 
-import android.app.Application
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
+import androidx.multidex.MultiDexApplication
 import com.blankj.utilcode.util.Utils
 
 /**
@@ -11,7 +11,7 @@ import com.blankj.utilcode.util.Utils
  * @CreateDate: 2020/12/17 14:39
  * @Description:
  */
-abstract class BaseApplication : Application(), ViewModelStoreOwner {
+abstract class BaseApplication : MultiDexApplication(), ViewModelStoreOwner {
     private lateinit var appViewModelStore: ViewModelStore
     override fun onCreate() {
         super.onCreate()

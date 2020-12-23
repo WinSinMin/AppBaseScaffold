@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -6,6 +8,7 @@ android {
     defaultConfig {
         applicationId "com.kunminx.scaffold"
         minSdkVersion 23
+        multiDexEnabled true
         targetSdkVersion 29
         versionCode 30204
         versionName "3.2.4"
@@ -27,6 +30,10 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 
     repositories {

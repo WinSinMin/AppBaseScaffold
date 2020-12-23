@@ -18,7 +18,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/keepNavigationFragment">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -41,6 +41,13 @@
             app:exitAnim="@anim/h_fragment_exit"
             app:popEnterAnim="@anim/h_fragment_pop_enter"
             app:popExitAnim="@anim/h_fragment_pop_exit" />
+        <action
+            android:id="@+id/action_mainFragment_to_keepNavigationFragment"
+            app:destination="@id/keepNavigationFragment"
+            app:enterAnim="@anim/h_fragment_enter"
+            app:exitAnim="@anim/h_fragment_exit"
+            app:popEnterAnim="@anim/h_fragment_pop_enter"
+            app:popExitAnim="@anim/h_fragment_pop_exit" />
 
     </fragment>
 
@@ -57,5 +64,10 @@
         android:name="com.kunminx.puremusic.ui.page.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/keepNavigationFragment"
+        android:name="com.kunminx.puremusic.ui.page.KeepNavigationFragment"
+        android:label="KeepNavigationFragment"
+        tools:layout="@layout/fragment_keep_nav" />
 
 </navigation>

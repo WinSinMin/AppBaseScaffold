@@ -18,7 +18,9 @@ package com.kunminx.puremusic.ui.state;
 
 import androidx.databinding.ObservableBoolean;
 import androidx.databinding.ObservableField;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import androidx.navigation.NavController;
 
 import com.kunminx.puremusic.domain.request.AccountRequest;
 
@@ -49,5 +51,7 @@ public class LoginViewModel extends ViewModel {
     //https://xiaozhuanlan.com/topic/8204519736
 
     public final AccountRequest accountRequest = new AccountRequest();
+
+    public final MutableLiveData<NavController> navController = new MutableLiveData<>();
 
 }

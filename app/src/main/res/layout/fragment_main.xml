@@ -70,7 +70,7 @@
                     drawable_strokeColor="@{0x33666666}"
                     drawable_strokeWidth="@{1}"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="37dp"
                     android:layout_marginEnd="12dp"
@@ -85,7 +85,6 @@
                         android:onClick="@{()->click.openMenu()}"
                         android:scaleType="centerInside"
                         android:src="@drawable/ic_menu_black_48dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,7 +96,6 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:scaleType="centerInside"
                         android:src="@drawable/ic_music_note_black_48dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintRight_toLeftOf="@+id/tv_app"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -107,6 +105,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/app_name"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_keep"
+                        onClickWithDebouncing="@{()->click.keep()}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_10"
+                        android:text="keep"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -123,7 +134,6 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:scaleType="centerInside"
                         android:src="@drawable/ic_search_black_48dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 

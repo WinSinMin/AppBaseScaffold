@@ -23,9 +23,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.databinding.BindingAdapter;
+import androidx.navigation.NavController;
+import androidx.navigation.ui.NavigationUI;
 
 import com.blankj.utilcode.util.ClickUtils;
 import com.bumptech.glide.Glide;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
  * Create by KunMinX at 19/9/18
@@ -73,6 +76,11 @@ public class CommonBindingAdapter {
         ViewGroup.LayoutParams params = view.getLayoutParams();
         params.width = adjustWidth;
         view.setLayoutParams(params);
+    }
+
+    @BindingAdapter("setupWithNavController")
+    public static void setupWithNavController(BottomNavigationView view, NavController navController) {
+        NavigationUI.setupWithNavController(view, navController);
     }
 
     @BindingAdapter(value = {"adjustHeight"})
