@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Handler
 import android.os.Looper
 import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
@@ -29,6 +30,7 @@ abstract class BaseFragment : DataBindingFragment() {
     private var fragmentProvider: ViewModelProvider? = null
     private var activityProvider: ViewModelProvider? = null
     private var applicationProvider: ViewModelProvider? = null
+    private val startOffset = 200L
 
     private val handler by lazy { Handler(Looper.getMainLooper()) }
     protected val navController by lazy { nav() }
@@ -73,21 +75,28 @@ abstract class BaseFragment : DataBindingFragment() {
 
     protected open fun nav(): NavController = NavHostFragment.findNavController(this)
 
-    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
-        handler.postDelayed({
-            (!animationLoaded).let {
-                animationLoaded = true
-                loadInitData()
-            }
-        }, 280)
-        return super.onCreateAnimation(transit, enter, nextAnim)
-    }
-
     protected open fun loadInitData() {}
 
     protected open fun toggleSoftInput() = (parentActivity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager).toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS)
 
     protected open fun openUrlInBrowser(url: String?) = startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+
+    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
+        if (enter) {
+            if (nextAnim > 0) {
+                val animation = AnimationUtils.loadAnimation(requireActivity(), nextAnim)
+                animation.startOffset = startOffset
+                return animation
+            }
+        } else {
+            if (nextAnim > 0) {
+                val animation = AnimationUtils.loadAnimation(requireActivity(), nextAnim)
+                animation.startOffset = startOffset
+                return animation
+            }
+        }
+        return super.onCreateAnimation(transit, enter, nextAnim)
+    }
 
 
 }

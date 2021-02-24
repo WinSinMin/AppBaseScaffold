@@ -4,11 +4,8 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.plusAssign
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
 import com.kunminx.puremusic.BR
 import com.kunminx.puremusic.R
-import com.kunminx.puremusic.databinding.FragmentKeepNavBinding
 import com.kunminx.puremusic.ui.state.LoginViewModel
 import com.wsm.base_scaffold.building.ui.page.BaseFragment
 import com.wsm.base_scaffold.building.ui.page.DataBindingConfig

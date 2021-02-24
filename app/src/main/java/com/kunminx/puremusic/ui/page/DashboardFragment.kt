@@ -1,11 +1,13 @@
 package com.kunminx.puremusic.ui.page
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.*
+import com.blankj.utilcode.util.LogUtils
 import com.kunminx.puremusic.BR
 import com.kunminx.puremusic.R
 import com.kunminx.puremusic.databinding.FragmentDashboardBinding
@@ -23,6 +25,47 @@ class DashboardFragment : BaseFragment() {
         return DataBindingConfig(R.layout.fragment_dashboard, BR.vm, drawerViewModel)
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        LogUtils.v("onAttach")
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        LogUtils.v("onCreateView")
+        return super.onCreateView(inflater, container, savedInstanceState)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        LogUtils.v("onViewCreated")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        LogUtils.v("onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        LogUtils.v("onPause")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        LogUtils.v("onDestroyView")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        LogUtils.v("onDestroy")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        LogUtils.v("onDetach")
+    }
+
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val binding = getBinding() as FragmentDashboardBinding
@@ -33,6 +76,7 @@ class DashboardFragment : BaseFragment() {
 
         val data = (1..50).map { "Item $it" }
         adapter.submitList(data)
+        LogUtils.v("onActivityCreated")
     }
 }
 
